@@ -1,4 +1,37 @@
 import axios from 'axios';
+// import { ImgApi } from './axiosing.js';
+// import LoadMoreBtn from './components/LoadMoreBtn.js';
+import Notiflix from 'notiflix';
+// import axios from 'axios';
+
+class LoadMoreBtn {
+  constructor({ selector, isHiden = false }) {
+    this.button = this.getButton(selector);
+
+    isHiden && this.hide();
+  }
+
+  getButton(selector) {
+    return document.querySelector(selector);
+  }
+
+  hide() {
+    this.button.classList.add('hidden');
+  }
+
+  show() {
+    this.button.classList.remove('hidden');
+  }
+
+  enable() {
+    this.button.disabled = false;
+    this.button.textContent = 'Load more';
+  }
+  disable() {
+    this.button.disabled = true;
+    this.button.textContent = 'Loading';
+  }
+}
 
 const MY_API_KEY = '33373070-0a3de92214998aff69d545527';
 const ENDPOINT = 'https://pixabay.com/api/?key=';
@@ -42,11 +75,6 @@ class ImgApi {
     this.queryPage += 1;
   }
 }
-
-// import { ImgApi } from './axiosing.js';
-import LoadMoreBtn from './components/LoadMoreBtn.js';
-import Notiflix from 'notiflix';
-// import axios from 'axios';
 
 const galletyList = document.querySelector('.gallery');
 const form = document.getElementById('search-form');
