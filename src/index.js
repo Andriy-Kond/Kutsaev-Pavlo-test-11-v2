@@ -103,7 +103,8 @@ function onInput(e) {
   imgApi.resetPage();
   loadMore.show();
 
-  onLoadMore().finally(() => form.reset());
+  onLoadMore();
+  // .finally(() => form.reset());
 }
 
 function createMarkup({
