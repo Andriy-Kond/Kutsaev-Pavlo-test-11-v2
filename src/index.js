@@ -1,4 +1,4 @@
-// import { ImgApi } from './axiosing.js';
+import { ImgApi } from './axiosing.js';
 // import LoadMoreBtn from './components/LoadMoreBtn.js';
 import Notiflix from 'notiflix';
 // import axios from 'axios';
